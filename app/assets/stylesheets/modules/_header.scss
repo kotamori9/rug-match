@@ -1,0 +1,105 @@
+.fa-bars {
+  font-size: 2em;
+}
+
+.headerContent {
+  width: 100vw;
+  height: 10vh;
+  background-color:rgba(255, 255, 255, 0.945);
+  position: absolute;
+  top: 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-shadow    : 
+  3px  3px 2px rgba(0, 0, 0, 0.74),
+ -3px  3px 2px rgba(0, 0, 0, 0.74),
+  3px -3px 2px rgba(0, 0, 0, 0.74),
+ -3px -3px 2px rgba(0, 0, 0, 0.74),
+  3px  0px 2px rgba(0, 0, 0, 0.74),
+  0px  3px 2px rgba(0, 0, 0, 0.74),
+ -3px  0px 2px rgba(0, 0, 0, 0.74),
+  0px -3px 2px rgba(0, 0, 0, 0.74);    
+
+  &__leftBox {
+    margin-left: 2%;
+    height: 100%;
+    padding-top: 5vh;
+    font-size: 3em;
+    line-height: 5vh;
+  }
+
+  &__rightBox {
+    margin-right: 3%;
+    justify-content: space-between;
+    display: flex;
+
+    &--items {
+      color: white;
+      margin-right: 2.4em;
+      font-size: 1.2em;
+    }
+  }
+}
+
+.humburgerMenu {
+  height: 0;
+  width: 100vw;
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  background-color:#dddbdb;
+  line-height: 3vh;
+  transition: all 0.6s ease;
+  display: flex;
+  visibility: hidden;
+  z-index: 2 !important;
+  opacity: 0.1;
+
+  text-shadow    : 
+  3px  3px 2px rgba(0, 0, 0, 0.74),
+ -3px  3px 2px rgba(0, 0, 0, 0.74),
+  3px -3px 2px rgba(0, 0, 0, 0.74),
+ -3px -3px 2px rgba(0, 0, 0, 0.74),
+  3px  0px 2px rgba(0, 0, 0, 0.74),
+  0px  3px 2px rgba(0, 0, 0, 0.74),
+ -3px  0px 2px rgba(0, 0, 0, 0.74),
+  0px -3px 2px rgba(0, 0, 0, 0.74);
+
+  &__item {
+    font-size: 1.2em;
+    color: white;
+    margin-top: 20px;
+    display: flex;
+    padding: 0 25px;
+    position: relative;
+    opacity: 1;
+
+    &::after {
+      background-color:white;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 1px;
+      left: 0;
+      top: 20px;
+      position: absolute;
+      transition: 0.5s all;
+      width: 0;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.show {
+  top: 10vh;
+  height: 7vh;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+  justify-content: flex-end;
+  line-height: 2vh;
+}
