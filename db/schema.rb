@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_05_28_164618) do
     t.string "name", default: "", null: false
     t.string "image_id"
     t.string "introduction", default: ""
-    t.integer "area", null: false
+    t.string "area", null: false
     t.string "category_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

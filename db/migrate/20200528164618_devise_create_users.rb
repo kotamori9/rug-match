@@ -9,8 +9,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string  :name,               null: false, default: ""
       t.string  :image_id
       t.string  :introduction,       default: ""
-      t.integer :area,               null: false
-      t.string :category_id
+      t.string  :area,               null: false
+      t.string  :category_id
 
       ## Recoverable
       t.string   :reset_password_token
