@@ -3,7 +3,7 @@
   .mypage-content__profile
     .mypage-content__profile__title-box
       .mypage-content__profile__title-box__title
-        Profile
+        プロフィール
     .mypage-content__profile__main
       .mypage-content__profile__main__image-box
         .mypage-content__profile__main__image-box__image
@@ -26,4 +26,3 @@
         - if @user.id == current_user.id
           = link_to edit_user_path, class: "btn-edit" do
             = icon('fas', 'cog')
-          %p.fukidashi-edit 編集

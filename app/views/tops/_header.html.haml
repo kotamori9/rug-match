@@ -1,6 +1,6 @@
 .headerContent
   .headerContent__leftBox
-    らぐマチ
+    = link_to 'らぐマチ', root_path
   .headerContent__rightBox
     - if user_signed_in?
       = link_to 'ログアウト', destroy_user_session_path, class: "headerContent__rightBox--items", method: :delete  
