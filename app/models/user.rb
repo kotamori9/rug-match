@@ -8,6 +8,8 @@ class User < ApplicationRecord
          validates :name, presence: true
          validates :area, presence: true
   
+  mount_uploader :image, ImageUploader
+  
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :areahash
 end
