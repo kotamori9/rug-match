@@ -1,10 +1,10 @@
 .headerContent
   .headerContent__leftBox
-    らぐマチ
+    = link_to 'らぐマチ', root_path
   .headerContent__rightBox
     - if user_signed_in?
       = link_to 'ログアウト', destroy_user_session_path, class: "headerContent__rightBox--items", method: :delete  
-      = link_to 'マイページ','/',  class: "headerContent__rightBox--items"         
+      = link_to 'マイページ',user_path(current_user),  class: "headerContent__rightBox--items"         
     - else 
       = link_to '新規作成', new_user_registration_path, class: "headerContent__rightBox--items"   
       = link_to 'ログイン', new_user_session_path,  class: "headerContent__rightBox--items"         

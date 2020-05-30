@@ -1,0 +1,28 @@
+.mypage-content
+  = render "tops/header"
+  .mypage-content__profile
+    .mypage-content__profile__title-box
+      .mypage-content__profile__title-box__title
+        プロフィール
+    .mypage-content__profile__main
+      .mypage-content__profile__main__image-box
+        .mypage-content__profile__main__image-box__image
+          = image_tag "#{@user.image}"
+      .mypage-content__profile__main__name-box
+        .mypage-content__profile__main__name-box__name
+          = @user.name
+      .mypage-content__profile__main__area-box
+        .mypage-content__profile__main__area-box__icon
+          = icon('fas', 'map-marker-alt')
+        .mypage-content__profile__main__area-box__area
+          = @area.name
+      .mypage-content__profile__main__introduction-box
+        .mypage-content__profile__main__introduction-box__title
+          チーム紹介
+        .mypage-content__profile__main__introduction-box__introduction
+          = safe_join(@user.introduction.split("\n"),tag(:br))
+      .mypage-content__profile__main__blank-box
+      .mypage-content__profile__main__user-box
+        - if @user.id == current_user.id
+          = link_to edit_user_path, class: "btn-edit" do
+            = icon('fas', 'cog')

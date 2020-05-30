@@ -1,0 +1,35 @@
+#account-page.account-page
+  .account-page__inner.clearfix
+    .account-page__inner--left.account-page__header
+      %h2 アカウント編集
+      -if current_user.email != "guest@example.com" 
+        名前
+    .account-page__inner--right.user-form
+    -if current_user.email != "guest@example.com" 
+      = form_for(current_user) do |f|
+        .field
+          .field-input
+            = f.text_field :name, autofocus: true,maxlength: "6"
+        .field
+          Eメール
+          .field-input
+            = f.email_field :email
+        .field
+          .field-label
+            = f.label :ユーザーアイコン
+          .image-label
+          - if @user.image.present?
+            = image_tag "#{(@user.image).to_s}", width: "112", height: "112", alt: "preview", id: :img_prev_edit
+            = f.file_field :image
+          - else
+            = image_tag "member_photo_noimage_thumb.png", width: "112", height: "112", alt: "preview", id: :img_prev_edit
+            = f.file_field :image
+          .actions
+            = f.submit "更新", class: 'btn'
+          = link_to "トップページに戻る","/", class: 'btn'
+          
+    - else
+      .account-page__inner--right.user-guest
+        ゲストユーザーは編集することができません
+        = link_to "トップページに戻る","/", class: 'btn'
+        = link_to "ログアウト", destroy_user_session_path,method: :delete,class: 'btn'

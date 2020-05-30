@@ -5,7 +5,6 @@
 .headerContent {
   width: 100vw;
   height: 10vh;
-  background-color:rgba(255, 255, 255, 0.945);
   position: absolute;
   top: 0;
   color: white;
@@ -31,6 +30,10 @@
     padding-top: 5vh;
     font-size: 3em;
     line-height: 5vh;
+
+    a{
+      color: white;
+    }
   }
 
   &__rightBox {
