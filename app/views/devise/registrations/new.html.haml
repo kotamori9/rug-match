@@ -1,24 +1,21 @@
 #account-page.account-page
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header
-      %h2 Create Account
-      %h5 新規アカウントの作成
+      %h2 新規作成
       = render "devise/shared/links"
     .account-page__inner--right.user-form
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
         .field
-          .field-label 
-            = f.label :写真
+          .field-label
+            = f.label :image
           .image-label
-          - if @user.image.present?
-            = image_tag "#{(@user.image).to_s}", width: "112", height: "112", alt: "preview", id: :img_prev
-          - else
             = image_tag "member_photo_noimage_thumb.png", width: "112", height: "112", alt: "preview", id: :img_prev
+        .field
           .field-input
             = f.file_field :image,id: :user_img
           .field-label
-            = f.label :名前
+            = f.label :name
             %i (6文字以下)
           .field-input
             = f.text_field :name, autofocus: true
@@ -27,6 +24,11 @@
             = f.label :email
           .field-input
             = f.email_field :email
+        .field
+          .field-label
+            = f.label :area
+          .field-select
+            = f.collection_select :area, Areahash.all, :id, :name, prompt: "選択してください"
         .field
           .field-label
             = f.label :password
@@ -38,5 +40,10 @@
             = f.label :password_confirmation
           .field-input
             = f.password_field :password_confirmation, autocomplete: "off"
+        .field
+          .field-label
+            = f.label :introduction
+          .field-input
+            = f.text_field :introduction, autofocus: true, autocomplete: "introduction", class: 'introduction-text'
         .actions
           = f.submit "アカウント作成", class: 'btn'

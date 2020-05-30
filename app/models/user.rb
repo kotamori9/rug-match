@@ -3,4 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+         validates :password, length: { minimum: 8 }
+         validates :name, presence: true
+         validates :area, presence: true
+  
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :areahash
 end

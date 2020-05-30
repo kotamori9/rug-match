@@ -1,4 +1,5 @@
 @import "reset";
+@import "config/colors";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "users.scss";
@@ -6,3 +7,4 @@
 @import "modules/_header.scss";
 @import "modules/top_content";
 @import "modules/_footer.scss";
+@import "modules/flash";
