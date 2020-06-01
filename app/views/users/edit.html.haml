@@ -16,7 +16,7 @@
             = f.email_field :email
         .field
           .field-label
-            = f.label :ユーザーアイコン
+            = f.label :image
           .image-label
           - if @user.image.present?
             = image_tag "#{(@user.image).to_s}", width: "112", height: "112", alt: "preview", id: :img_prev_edit
