@@ -1,16 +1,14 @@
 .headerContent
   .headerContent__leftBox
     = link_to 'らぐマチ', root_path
-  .headerContent__rightBox
-    - if user_signed_in?
-      = link_to 'ログアウト', destroy_user_session_path, class: "headerContent__rightBox--items", method: :delete  
-      = link_to 'マイページ',user_path(current_user),  class: "headerContent__rightBox--items"         
-    - else 
-      = link_to '新規作成', new_user_registration_path, class: "headerContent__rightBox--items"   
-      = link_to 'ログイン', new_user_session_path,  class: "headerContent__rightBox--items"         
+  .headerContent__rightBox         
     %i.fas.fa-bars
     %ul.humburgerMenu 
       %li
-        = link_to 'チームを探す','/', class: "humburgerMenu__item"
-      %li
-        = link_to 'メンバーを募集する','/', class: "humburgerMenu__item"
+        = link_to '募集一覧','/', class: "humburgerMenu__item"
+      - if user_signed_in?
+        = link_to 'マイページ',user_path(current_user),  class: "humburgerMenu__item"         
+        = link_to 'ログアウト', destroy_user_session_path, class: "humburgerMenu__item", method: :delete  
+      - else 
+        = link_to '新規作成', new_user_registration_path, class: "humburgerMenu__item"   
+        = link_to 'ログイン', new_user_session_path,  class: "humburgerMenu__item"
