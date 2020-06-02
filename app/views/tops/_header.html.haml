@@ -5,7 +5,7 @@
     %i.fas.fa-bars
     %ul.humburgerMenu 
       %li
-        = link_to '募集一覧','/', class: "humburgerMenu__item"
+        = link_to '募集一覧',new_top_path, class: "humburgerMenu__item"
       - if user_signed_in?
         = link_to 'マイページ',user_path(current_user),  class: "humburgerMenu__item"         
         = link_to 'ログアウト', destroy_user_session_path, class: "humburgerMenu__item", method: :delete  
