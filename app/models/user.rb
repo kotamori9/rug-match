@@ -9,6 +9,7 @@ class User < ApplicationRecord
          validates :area, presence: true
   
   mount_uploader :image, ImageUploader
+  belongs_to :recruitment
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :areahash
