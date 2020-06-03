@@ -1,0 +1,32 @@
+= render "tops/header"
+.groupsForm__low
+  .groupsForm
+    = form_with model: @recruitment,local: true do |f|
+      .field
+        = f.label :"チーム名"
+        %span.groupsForm__required
+          必須
+        %br/
+        = f.text_field :teamname,class: "groupsForm__field", placeholder:"チーム名を入力してください",maxlength:13
+      .field
+        = f.label :"備考欄"
+        %span.groupsForm__required
+          必須
+        %br/
+        = f.text_area :introduction,class: "groupsForm__area", placeholder:"このチームの説明を入力してください"
+      .field
+        = f.label :area
+        %br/
+        = f.collection_select :area, Areahash.all, :id, :name, prompt: "選択してください"
+      .field.groupsForm__category--low
+        %div.groupsForm__category
+          = f.label :"カテゴリ"
+          %span.groupsForm__categorySelect
+            （複数選択可）
+          %span.groupsForm__required
+            必須
+        = f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
+          = category.label do
+            = category.check_box
+            = category.text
+      = f.submit "募集する", class: "groupsForm__submit"

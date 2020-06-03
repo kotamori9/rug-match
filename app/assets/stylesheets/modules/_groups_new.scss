@@ -1,0 +1,75 @@
+.groupsForm__low{
+  background-color: #f9f9f9;
+  padding: 145px 0 100px;
+  overflow-y: scroll;
+  & .groupsForm{
+    width: 35%;
+    background-color: White;
+    margin:auto;
+    padding: 5% 8%;
+    & .field{
+      margin-bottom: 50px;
+    }
+    & label{
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    &__required{
+      background-color: Blue;
+      padding: 3px;
+      border-radius: 20%;
+      margin: 0 10px;
+      font-size: 0.7em;
+    }
+    &__categorySelect{
+      font-size: 0.9em;
+    }
+    &__field{
+      width: 100%;
+      margin-top: 20px;
+      height: 55px;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+    &__area{
+      padding: 5px;
+      width: 100%;
+      height: 120px;
+      margin-top:20px;
+      resize: vertical;
+      border-style: inset;
+      border-color: initial;
+      border-image: initial;
+      border-radius: 5px;
+    }
+    &__category{
+      margin-bottom: 20px;
+      & :nth-child(1){
+        margin: 0;
+      }
+    }
+    &__category--low{
+      & input{
+        cursor: pointer;
+      }
+      & label{
+        display: inline-block;
+        margin: 10px;
+        cursor: pointer;
+      }
+    }
+    &__submit{
+      width: 100%;
+      height: 48px;
+      background-color: Blue;
+      font-weight: bold;
+      border-radius: 5px;
+      color: White;
+      margin-top: 50px;
+      cursor: pointer;
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+  }
+}
