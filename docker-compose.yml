@@ -20,8 +20,9 @@ services:
       - bundle:/usr/local/bundle    #bundle installした後buildし直さなくてよくなる
     ports:
       - "3000:3000"
-    links:
+    depends_on:
       - db
+  
 
 volumes:
   mysql-data:
