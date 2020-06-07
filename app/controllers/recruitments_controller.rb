@@ -19,6 +19,6 @@ class RecruitmentsController < ApplicationController
 
   private
   def recruitment_params
-    params.require(:recruitment).permit(:teamname, :area, :category, :introduction).merge(user_id: current_user.id)
+    params.require(:recruitment).permit(:teamname, :area, :category, :introduction, :category_id, :recruitment_id).merge(user_id: current_user.id)
   end
 end

@@ -1,5 +1,5 @@
 class Recruitment < ApplicationRecord
-  has_many :categories
+  has_many :categories, through: :recruitment_categories
   belongs_to :user
 
   extend ActiveHash::Associations::ActiveRecordExtensions

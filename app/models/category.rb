@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  belongs_to :recruitment
+  has_many :recruitment, through: :recruitment_categories
 end
