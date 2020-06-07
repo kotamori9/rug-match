@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2020_06_07_023636) do
 
   create_table "recruitments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_id"
-    t.string "category_id"
     t.text "introduction"
     t.string "area", null: false
     t.string "teamname", null: false
