@@ -15,7 +15,7 @@
       font-size: 1.1em;
     }
     &__required{
-      background-color: Blue;
+      background-color: lightcoral;
       padding: 3px;
       border-radius: 20%;
       margin: 0 10px;
@@ -60,7 +60,7 @@
     &__submit{
       width: 100%;
       height: 48px;
-      background-color: Blue;
+      background-color: rgba(25, 0, 255, 0.685);
       font-weight: bold;
       border-radius: 5px;
       color: White;
