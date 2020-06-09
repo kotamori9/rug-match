@@ -1,0 +1,32 @@
+.recruitment{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 5rem;
+  &__content{
+    background-color: red;
+    opacity:  0.7;
+    height: 10rem;
+    width: 80%;
+    padding: 40px;
+    margin: 10vh 10% 5vh 10%;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+    &__title{
+      font-weight: 600;
+      padding-bottom: 20px;
+    }
+    &__application-btn{
+      padding-top: 30px;
+      font-size: 14px;
+      .btn--edit{
+        display: inline-block;
+        padding: 6px 20px 6px 20px;
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+        text-align: center;
+        text-decoration: none;
+        background: #47a3dd;
+        color: floralwhite;
+      }
+    }
+  }
+}
