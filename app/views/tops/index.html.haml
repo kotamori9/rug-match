@@ -1,2 +1,23 @@
 .wrapper
   = render "tops/header"
+  .recruitment
+  - @recruitments.each do |post|
+    .recruitment__content.wow.fadeInLeft
+      .recruitment__content__title
+        = post.teamname
+      .recruitment__content__name
+        募集者 :
+        = link_to user_path(post.user_id), class: "user--edit" do
+          = post.user.name
+      .recruitment__content__place
+        エリア :
+        = post.area
+      .recruitment__content__introduction
+        紹介文 :
+        = post.introduction
+      -# .recruitment__content__category
+      -#   カテゴリ :
+      -#   = post.category
+      .recruitment__content__application-btn
+        -# = link_to post_path(post), class: "btn--edit" do
+        連絡を取る
