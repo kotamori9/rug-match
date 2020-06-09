@@ -10,6 +10,12 @@
     padding: 40px;
     margin: 10vh 10% 5vh 10%;
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+    &__box{
+      display: flex;
+    }
+    &__box2{
+      margin-left: 100px;
+    }
     &__title{
       font-weight: 600;
       padding-bottom: 20px;
