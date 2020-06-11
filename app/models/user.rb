@@ -10,6 +10,9 @@ class User < ApplicationRecord
   
   mount_uploader :image, ImageUploader
   
+  has_many :dms, dependent: :destroy
+  has_many :entries, dependent: :destroy
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :areahash
 end

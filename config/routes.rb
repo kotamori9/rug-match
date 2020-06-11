@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root to: "recruitments#index"
   resources :users, only: [:edit,:update,:show,:destroy]
+  resources :dms, only: [:index, :create]
+  resources :rooms, only: [:create, :show, :index]
   resources :recruitments, only: [:index,:new,:create] do
     collection do
       resources :tops
