@@ -21,8 +21,26 @@
           自己紹介
         .mypage-content__profile__main__introduction-box__introduction
           = safe_join(@user.introduction.split("\n"),tag(:br))
-      -# .mypage-content__profile__main__blank-box
-      -# .mypage-content__profile__main__user-box
-      -#   - if @user.id == current_user.id
-      -#     = link_to edit_user_path, class: "btn-edit" do
-      -#       = icon('fas', 'cog')
+      .mypage-content__profile__main__blank-box
+      .mypage-content__profile__main__user-box
+        - if @user.id == current_user.id
+          = link_to rooms_path, class: "btn-comments" do
+            = icon('fas', 'comments')
+          -# %p.fukidashi-comments DM
+          = link_to edit_user_path, class: "btn-edit" do
+            = icon('fas', 'cog')
+          -# %p.fukidashi-edit Setting
+        - else
+          - if @user.id == current_user.id
+          - else
+            - if @isRoom == true
+              %p
+                = link_to "/rooms/#{@roomId}", class: "btn-edit2" do
+                  = icon('fas', 'envelope')
+            - else
+              .mypage-content__profile__main__new-user-box
+                = form_for @room do |f|
+                  = fields_for @entry do |e|
+                    = e.hidden_field :user_id, :value=> @user.id
+                  = f.button type: "submit", class: "btn-new-room" do
+                    = icon('fas', 'envelope')

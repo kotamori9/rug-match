@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2020_06_07_023636) do
 
   create_table "dms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
-    t.string "user"
-    t.string "room"
+    t.string "user_id"
+    t.string "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

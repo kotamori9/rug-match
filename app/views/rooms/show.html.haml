@@ -1,0 +1,68 @@
+= render "tops/header"
+.message-chat-wrapper
+  -# 一覧
+  .message-chat-wrapper__left
+    .room-top
+      Message
+    - @anotherEntries.each do |e|
+      = link_to room_path(e.room.id) do
+        .room-list
+          .room-list__image
+            -if e.user.image?
+              = image_tag "#{e.user.image.url}", class: "message-user-image"
+            -else
+              = image_tag "siruetto.jpg", class: "message-user-image"
+          .room-list__talk-box
+            .room-list__talk-box__name
+              = e.user.name
+            .room-list__talk-box__last-talk
+              - if e.room.dms.present? 
+                = e.room.dms.order(created_at: :desc).take.try(:content).truncate(15)
+              -else
+                まだメッセージはありません。
+  -# メッセージ
+  .message-chat-wrapper__center
+    .message-chat-wrapper__center__header
+      .message-chat-wrapper__center__header__opponent-user-box
+        - @entries.each do |e|
+          - if e.user.id == current_user.id
+          - else
+            .message-chat-wrapper__center__header__opponent-user-box__image
+              = image_tag "#{e.user.image.url}", class: "opponent-img"
+            .message-chat-wrapper__center__header__opponent-user-box__name
+              %a{href: "/users/#{e.user.id}", class: "opponent-user"}
+                = e.user.name
+    .message-chat-wrapper__center__main
+      - if @dms.present?
+        - @dms.each do |m|
+          - if m.user.id != current_user.id
+            .directmessages-date
+              = m.created_at.strftime("%Y/%m/%d")
+            .left-message-box
+              %a{href: "/users/#{m.user.id}"}
+                -if m.user.image?
+                  = image_tag "#{m.user.image.url}", class: "message-user-image"
+                -else
+                  = image_tag "siruetto.jpg", class: "message-user-image"
+              .left-message-box__content
+                = m.content
+              .directmessages-time-box
+                .directmessages-time-box__time
+                  = m.created_at.strftime("%H:%M")
+          -else
+            .directmessages-date
+              = m.created_at.strftime("%Y/%m/%d")
+            .right-message-box
+              .right-message-box__right
+                .directmessages-time-box-right
+                  .directmessages-time-box-right__time
+                    = m.created_at.strftime("%H:%M")
+                .right-message-box__right__content
+                  = m.content
+      - else
+        %h3.text-center メッセージはまだありません
+    .message-chat-wrapper__center__bottom
+      = form_for @dm do |f|
+        = f.text_field :content, :placeholder => "メッセージを入力して下さい", class: "form-text"
+        = f.hidden_field :room_id, :value => @room.id
+        = f.submit "送信", class: "form-btn"
