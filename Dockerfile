@@ -15,3 +15,4 @@ RUN gem install bundler
 RUN bundle install
 
 ADD . /rug-match
+RUN mkdir -p tmp/sockets
