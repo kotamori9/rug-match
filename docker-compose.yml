@@ -14,12 +14,16 @@ services:
     tty: true          #コンテナ上でbinding.pryするために必要
     stdin_open: true   #コンテナ上でbinding.pryするために必要
     build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    command: bundle exec puma -C config/puma.rb
+    # command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/rug-match    #ローカルのディレクトリをコンテナ上にマウント
+      - public-data:/rug-match/public
+      - tmp-data:/rug-match/tmp
+      - log-data:/rug-match/log
       - bundle:/usr/local/bundle    #bundle installした後buildし直さなくてよくなる
-    ports:
-      - "3000:3000"
+    # ports:
+    #   - "3000:3000"
     depends_on:
       - db
 
