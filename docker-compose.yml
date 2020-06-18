@@ -27,8 +27,8 @@ services:
     build:
       context: containers/nginx
     volumes:
-      - public-data:/webapp/public
-      - tmp-data:/webapp/tmp
+      - public-data:/rug-match/public
+      - tmp-data:/rug-match/tmp
     ports:
       - 80:80
     depends_on:
