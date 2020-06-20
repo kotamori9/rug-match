@@ -21,5 +21,4 @@
       -# .recruitment__content__category
       -#   カテゴリ :
       -#   = post.category
-      .recruitment__content__application-btn
-        = link_to "連絡を取る",user_path(post.user_id)
+      = link_to "連絡を取る",user_path(post.user_id), class: "recruitment__content__application-btn"
