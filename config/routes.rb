@@ -5,9 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:edit,:update,:show,:destroy]
   resources :dms, only: [:index, :create]
   resources :rooms, only: [:create, :show, :index]
-  resources :recruitments, only: [:index,:new,:create] do
-    collection do
-      resources :tops
-    end
-  end
+  resources :recruitments, only: [:index,:new,:create] 
+  resources :tops
 end

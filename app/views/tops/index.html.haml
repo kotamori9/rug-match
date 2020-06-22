@@ -13,7 +13,7 @@
               = post.user.name
           .recruitment__content__box1__place
             エリア :
-            -# = @area.name
+            = @area.name
         .recruitment__content__box2
           .recruitment__content__box2__introduction
             紹介文 :
@@ -21,5 +21,4 @@
       -# .recruitment__content__category
       -#   カテゴリ :
       -#   = post.category
-      .recruitment__content__application-btn
-        = link_to "連絡を取る",user_path(post.user_id)
+      = link_to "連絡を取る",user_path(post.user_id), class: "recruitment__content__application-btn"
