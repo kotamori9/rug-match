@@ -1,6 +1,6 @@
 class Top < ApplicationRecord
   belongs_to :recruitment
-  belongs_to :category
+  has_many :categories
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :areahash
