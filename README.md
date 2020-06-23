@@ -4,7 +4,8 @@
   ## http://18.180.51.162/
 
 # アプリ説明
-[![Image from Gyazo](https://i.gyazo.com/33af9de2bc41312a79dfea5f0a02cd34.gif)](https://gyazo.com/33af9de2bc41312a79dfea5f0a02cd34)
+![Jun-23-2020 18-16-13](https://user-images.githubusercontent.com/61148722/85385773-a743cf80-b57d-11ea-944e-d4781bd6ed7b.gif)
+
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/61148722/78633019-71c30a80-78db-11ea-8102-2a39209f31ac.png" width="150px;" /></a>
