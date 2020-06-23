@@ -23,3 +23,7 @@
   <img height="70px" alt="73936026-3cbf2980-4925-11ea-97b2-274bd60a8fb5" src="https://user-images.githubusercontent.com/61148722/85380544-043c8700-b578-11ea-853b-f1ccf3d24754.png">
 </p>
 
+## 機能
+<li>ユーザー機能（簡単ログイン、マイページ）</li>
+<li>メンバー募集機能</li>
+<li>募集チームとのDM機能</li>
