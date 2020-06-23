@@ -1,24 +1,10 @@
-# README
+# らぐマチ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# App URL
+  ## http://18.180.51.162/
 
-Things you may want to cover:
+# アプリ説明
+![ラグマちトップ](https://user-images.githubusercontent.com/61148722/85365822-10691a00-b561-11ea-89fb-e53981d0b391.jpg)
 
-* Ruby version
+ラグマチは、ラグビーのクラブチームを探している方とクラブチームをマッチングさせるサービスです。
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
