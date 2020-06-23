@@ -7,7 +7,6 @@ class TopsController < ApplicationController
   end
 
   private
-
   def set_recruitment
     @recruitment = Recruitment.find_by(params[:id])
   end
