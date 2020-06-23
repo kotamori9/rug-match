@@ -27,8 +27,8 @@
           = link_to rooms_path, class: "btn-comments" do
             = icon('fas', 'comments')
           -# %p.fukidashi-comments DM
-          = link_to edit_user_path, class: "btn-edit" do
-            = icon('fas', 'cog')
+          -# = link_to edit_user_path, class: "btn-edit" do
+          -#   = icon('fas', 'cog')
           -# %p.fukidashi-edit Setting
         - else
           - if @user.id == current_user.id

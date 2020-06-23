@@ -20,5 +20,6 @@
             = post.introduction
       -# .recruitment__content__category
       -#   カテゴリ :
-      -#   = post.category
+      -#   = post.category_ids.each do |c|
+      -#     = c.name
       = link_to "連絡を取る",user_path(post.user_id), class: "recruitment__content__application-btn"
