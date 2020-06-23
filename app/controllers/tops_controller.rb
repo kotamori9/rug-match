@@ -8,6 +8,6 @@ class TopsController < ApplicationController
 
   private
   def set_recruitment
-    @recruitment = Recruitment.find_by(params[:id])
+    @recruitment = Recruitment.find_by(params[:area])
   end
 end

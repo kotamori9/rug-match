@@ -1,7 +1,7 @@
 class RecruitmentsController < ApplicationController
   
   def index
-
+    @recruitments = Recruitment.all
   end
 
   def new
